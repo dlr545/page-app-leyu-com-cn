@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 彩经网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafafa;
+            color: #2c2c2c;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3.5rem 1.8rem 4rem;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: #1e1e1e;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            max-width: 600px;
+        }
+
+        /* 通用分段 */
+        section {
+            margin-bottom: 3.4rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1e1e1e;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 0.3rem;
+        }
+
+        .subsection-title {
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            font-size: 1.05rem;
+            color: #2c2c2c;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+        }
+
+        a {
+            color: #1f3a6b;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd6e8;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #1f3a6b;
+            color: #0f1f3a;
+        }
+
+        /* 特点列表 极简卡片式 */
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            padding: 1.4rem 1.6rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            border: 1px solid #efefef;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-item h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.35rem;
+            color: #1e1e1e;
+        }
+
+        .feature-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: #4d4d4d;
+        }
+
+        .highlight {
+            background: #f7f9fc;
+            padding: 1.2rem 1.6rem;
+            border-left: 3px solid #1f3a6b;
+            border-radius: 0 8px 8px 0;
+            margin: 1.4rem 0;
+        }
+
+        .highlight p {
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-summary {
+            background: #ffffff;
+            padding: 1.2rem 1.6rem 1.6rem;
+            border-radius: 14px;
+            border: 1px solid #efefef;
+            margin-top: 0.8rem;
+        }
+
+        .faq-summary dt {
+            font-weight: 500;
+            margin: 1rem 0 0.25rem;
+            color: #1e1e1e;
+        }
+
+        .faq-summary dt:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        .faq-summary dd {
+            margin-left: 0;
+            padding-left: 0.2rem;
+            color: #4d4d4d;
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .bottom-links {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .bottom-links a {
+            margin-right: 0.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .page {
+                padding: 2rem 1.2rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .feature-item {
+                padding: 1rem 1.2rem;
+            }
+
+            .faq-summary {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>信息获取的简明指南</h1>
+        <p>无论你刚开始了解财经数据，还是已经熟悉各种分析工具，保持对信息来源的观察都是一种习惯。这里没有复杂的开场，只有一条提醒：先看清楚入口，再决定方向。</p>
+    </div>
+
+    <!-- 优势区：为什么从这里开始 -->
+    <section>
+        <h2 class="section-title">为什么先到这里</h2>
+        <p>在接触大量数字和信息之前，先明确自己访问的是哪个站点、哪个页面。很多看似相近的地址，背后可能是完全不同的内容逻辑。<a href="https://cnzh-caijing.com">彩经网</a> 是其中一条比较直接的路径，它的页面结构偏向于资讯聚合与基础数据展示，适合作为日常浏览的参照点之一。</p>
+
+        <div class="features">
+            <div class="feature-item">
+                <h3>结构清晰，层级分明</h3>
+                <p>页面以频道和栏目为基本框架，分类标签直接可见，不需要反复跳转。对于需要快速定位某个数据类型的用户来说，能节省不少时间。</p>
+            </div>
+            <div class="feature-item">
+                <h3>更新频率适中</h3>
+                <p>信息和数据保持常规的更新节奏，不会出现过于密集的推送，也不会长期停滞。这种节奏比较适合把浏览当作日常习惯，而不是被迫接收。</p>
+            </div>
+            <div class="feature-item">
+                <h3>页面设计偏向实用</h3>
+                <p>没有过多装饰或复杂动效，界面围绕信息展示展开。这种风格让注意力更容易集中在内容本身，而不是被交互形式分散。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区：从访问提醒的角度 -->
+    <section>
+        <h2 class="section-title">访问前的小提醒</h2>
+        <p>不管经验多少，每次访问一个网站都可以留意下面几件事。它们不复杂，但能帮你更快判断当前页面的价值。</p>
+        <div class="highlight">
+            <p><strong>1. 核对地址栏</strong><br>确保你所在的网址与预期一致。域名拼写、后缀、子目录都值得看一眼。尤其当搜索结果或第三方链接跳转过来时，一秒的确认能避免误入镜像或仿站。</p>
+            <p style="margin-top:1rem;"><strong>2. 先看页面标题和导航</strong><br>页面标题、主导航、面包屑这些元素会直接告诉你当前位置。如果发现导航与标题内容不符，或者分类名称陌生，建议再核对一下来源。</p>
+            <p style="margin-top:1rem;"><strong>3. 留意信息的时效标记</strong><br>数据类页面通常会有时间戳或更新日期。如果没有明确日期，可以对比近期内容的变化幅度来判断时效性。在信息获取中，时间本身就是重要参数。</p>
+        </div>
+        <p>这些提醒适用于大多数财经信息站点，也适用于 <a href="https://cnzh-caijing.com">彩经网</a>。把它当作一个普通的检查清单即可。</p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2 class="section-title">几个常见疑问</h2>
+        <dl class="faq-summary">
+            <dt>这个网站适合新手吗？</dt>
+            <dd>页面本身没有设置门槛，栏目名称和内容分类都比较常规。新手可以先从首页的“资讯”和“数据”两个板块入手，熟悉结构后再扩展阅读范围。</dd>
+
+            <dt>是否需要注册或登录才能浏览？</dt>
+            <dd>大部分内容可以直接访问，不需要注册。部分互动功能或个性化设置可能会要求登录，但日常的信息浏览和数据查看基本不受影响。</dd>
+
+            <dt>数据来源可靠吗？</dt>
+            <dd>网站上的数据通常会标注来源或引用渠道。建议在使用前留意页面标注，尤其是涉及具体数值时，可以交叉比对其他公开信息源。</dd>
+
+            <dt>如果遇到页面打不开怎么办？</dt>
+            <dd>先检查本地网络，再尝试刷新或更换浏览器。如果问题持续，可以稍后再试，也可能是临时维护。同时提醒一下，确认域名无误再访问。</dd>
+        </dl>
+        <p style="margin-top:1.2rem; font-size:0.95rem; color:#666;">如果你还有其他问题，最直接的方式是回到 <a href="https://cnzh-caijing.com">彩经网</a> 页面，在页脚或联系区域通常能找到帮助入口。</p>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="bottom-links">
+        <span>相关内容 · </span>
+        <a href="https://cnzh-caijing.com">彩经网</a>
+        <span style="margin:0 0.4rem;">·</span>
+        <a href="#">浏览建议</a>
+        <span style="margin:0 0.4rem;">·</span>
+        <a href="#">常见站点</a>
+        <p style="margin-top:1.2rem; font-size:0.88rem; color:#888;">本页仅为信息介绍，不构成任何投资建议或操作引导。请自行判断信息来源与适用性。</p>
+    </div>
+
+</div>
+</body>
+</html>
