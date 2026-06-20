@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>竞技宝 · 场景化使用指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f2f5;
+            color: #1e2b3c;
+            line-height: 1.7;
+            padding: 2.4rem 1.2rem;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        /* 主卡片容器 */
+        .hero-card {
+            background: #ffffff;
+            padding: 2.6rem 2rem 2.2rem;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 20, 30, 0.04);
+            border: 1px solid rgba(200, 210, 220, 0.35);
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .hero-card:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(18, 52, 77, 0.06);
+        }
+
+        h1 {
+            font-size: 2.0rem;
+            font-weight: 530;
+            letter-spacing: -0.02em;
+            color: #1a2e3f;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #4f6376;
+            font-weight: 400;
+            border-left: 3px solid #b2c7da;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.2rem 0;
+        }
+
+        .hero-text {
+            font-size: 1.04rem;
+            color: #2a3d4f;
+            max-width: 680px;
+        }
+
+        .hero-text a {
+            font-weight: 500;
+        }
+
+        /* 卡片网格 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem 1.6rem;
+            border: 1px solid rgba(190, 206, 222, 0.28);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 18px rgba(27, 55, 80, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 510;
+            margin-bottom: 0.55rem;
+            color: #1d3244;
+            letter-spacing: -0.01em;
+        }
+
+        .card p, .card ul {
+            font-size: 0.97rem;
+            color: #2f4357;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 0.25rem 0 0.2rem 1.2rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #7c94aa;
+            font-weight: bold;
+        }
+
+        .accent-border {
+            border-top: 3px solid transparent;
+            border-image: linear-gradient(90deg, #d3dde8, #b8ccdd) 1;
+        }
+
+        /* 提示 + FAQ 组合 */
+        .info-combo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-box {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            flex: 2 1 200px;
+            border: 1px solid #e2eaf1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .info-box h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1f374b;
+            margin-bottom: 0.35rem;
+        }
+
+        .info-box p, .info-box li {
+            font-size: 0.93rem;
+            color: #395066;
+        }
+
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            flex: 3 1 280px;
+            border: 1px solid #e2eaf1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .faq-mini h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1f374b;
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-q {
+            font-weight: 480;
+            color: #1c3549;
+            font-size: 0.96rem;
+        }
+
+        .faq-a {
+            color: #3b566b;
+            font-size: 0.9rem;
+            margin-top: 0.05rem;
+            padding-left: 0.6rem;
+            border-left: 2px solid #dae4ee;
+        }
+
+        .link-sentence {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1.4rem 2rem;
+            border: 1px solid #e0e9f0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            font-size: 1.03rem;
+            text-align: center;
+        }
+
+        .link-sentence a {
+            font-weight: 500;
+            text-decoration: none;
+            color: #1e5b7e;
+            border-bottom: 1px solid #b1c9db;
+            transition: border-color 0.15s;
+        }
+
+        .link-sentence a:hover {
+            border-bottom: 1.5px solid #0f3b55;
+        }
+
+        .note-footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #6a7f92;
+            border-top: 1px solid #dce4ec;
+            padding-top: 1.4rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 660px) {
+            body { padding: 1.4rem 0.9rem; }
+            .hero-card { padding: 2rem 1.2rem 1.6rem; }
+            h1 { font-size: 1.65rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 1rem; }
+            .card { padding: 1.4rem 1.2rem; }
+            .info-combo { flex-direction: column; }
+            .link-sentence { font-size: 0.98rem; padding: 1.2rem 1rem; }
+        }
+
+        @media (max-width: 460px) {
+            .hero-text { font-size: 0.98rem; }
+            .card h2 { font-size: 1.1rem; }
+        }
+
+        /* 可访问性辅助 */
+        a:focus-visible {
+            outline: 2px solid #2f6b8f;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区域 -->
+    <div class="hero-card">
+        <h1>竞技宝 · 使用场景简述</h1>
+        <div class="subhead">快速了解这个平台适合做什么、怎么用</div>
+        <div class="hero-text">
+            <p style="margin-bottom: 0.8rem;">如果你正在寻找一个融合了多种竞技内容、赛事信息及社区讨论的线上空间，<a href="https://zhc-jjbdianjing.com">竞技宝</a> 是一个值得留意的选择。它围绕电子竞技与体育竞猜搭建了基础框架，用户可通过它追踪赛程、查看数据，并参与部分互动模块。以下从实际使用的角度拆解它的核心轮廓。</p>
+            <p style="color: #3b566b; font-size: 0.96rem;">本篇介绍不构成推荐或保证，所有使用体验请以实际页面为准。</p>
+        </div>
+    </div>
+
+    <!-- 两个特点卡片 -->
+    <div class="grid-2">
+        <div class="card">
+            <h2>  信息聚合与导航</h2>
+            <p>平台将主流电竞赛事（如英雄联盟、DOTA2、CS2 等）的赛程、实时比分和历史记录整理在统一界面下。你可以快速定位某场正在进行的比赛，或查阅过往对局数据，而不必在多个网站之间跳转。对于关注多赛区的用户而言，这种整合能节省一些刷新页面的时间。</p>
+        </div>
+        <div class="card">
+            <h2>  互动与社区属性</h2>
+            <p>除了浏览内容，<a href="https://zhc-jjbdianjing.com">竞技宝</a> 也提供了基础的讨论与预测模块。用户可在赛事下方看到其他参与者的简短评论，部分功能允许用户表达对比赛走向的看法。整体氛围偏向理性讨论，没有过度渲染情绪或诱导性话术。</p>
+        </div>
+    </div>
+
+    <!-- 使用建议 + FAQ 混合区 -->
+    <div class="info-combo">
+        <div class="info-box">
+            <h3>使用建议</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="padding: 0.25rem 0 0.2rem 0.6rem;">• 首次使用建议先浏览「赛事」板块，观察信息更新频率和覆盖范围是否符合个人关注领域。</li>
+                <li style="padding: 0.25rem 0 0.2rem 0.6rem;">• 若需要查看特定战队或选手数据，可使用站内搜索（如果有）或通过筛选功能缩小范围。</li>
+                <li style="padding: 0.25rem 0 0.2rem 0.6rem;">• 参与社区讨论时注意甄别信息，平台展示的内容仅供参考，不构成投资或投注建议。</li>
+            </ul>
+        </div>
+        <div class="faq-mini">
+            <h3>常见疑问摘要</h3>
+            <div class="faq-item">
+                <div class="faq-q">  需要注册才能浏览吗？</div>
+                <div class="faq-a">大部分赛程和数据在未登录状态下可以访问，但部分互动功能（评论、预测等）可能需要注册账号。具体以实际页面提示为准。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">  内容是否实时更新？</div>
+                <div class="faq-a">比赛中的比分、时间等数据通常有较短延迟，与官方数据源同步。建议搭配直播流一起使用，效果更好。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自然嵌入链接的句子  -->
+    <div class="link-sentence">
+        如果你对以上的功能描述感兴趣，可以直接前往 <a href="https://zhc-jjbdianjing.com">竞技宝</a> 体验其界面与内容节奏。页面加载速度、具体模块布局请以实际站点为准。
+    </div>
+
+    <!-- 可信但克制的说明 -->
+    <div class="note-footer">
+        <span>本文档仅用于介绍页面用途与功能范围，不构成任何形式的商业担保或诱导。</span>
+        <span>所有信息基于公开可观察的网站结构撰写，实际功能可能随运营方调整而变化。</span>
+        <span style="display: inline-block; margin-top: 0.3rem;">— 2025 · 场景化介绍 —</span>
+    </div>
+
+</div>
+</body>
+</html>
