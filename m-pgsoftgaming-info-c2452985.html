@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pg电子 · 资料整理与索引说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fc;
+            color: #1e2233;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #10121c 0%, #1f2437 100%);
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+            color: #e9ecf3;
+            border-bottom: 1px solid #2f3550;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .hero .sub {
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #b0b9d0;
+            font-weight: 350;
+            line-height: 1.5;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: #3a415c;
+            color: #ced6e8;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            border: 1px solid #4c557a;
+        }
+
+        /* 主内容区：浅色正文 */
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* 卡片与区域分割 */
+        .section-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.15s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1a1f2f;
+            border-left: 5px solid #5262b5;
+            padding-left: 1rem;
+        }
+
+        .section-title-sm {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.6rem;
+            color: #232a40;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #2e3446;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            margin-top: 0.6rem;
+        }
+
+        ul li {
+            background: #edf0f8;
+            padding: 0.2rem 1rem 0.3rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #1f2642;
+            border: 1px solid #dbdff0;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.2rem;
+        }
+
+        .highlight-item {
+            background: #f7f9ff;
+            border-radius: 16px;
+            padding: 1.2rem 1rem;
+            border: 1px solid #e8ecf8;
+        }
+
+        .highlight-item strong {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 550;
+            margin-bottom: 0.4rem;
+            color: #283050;
+        }
+
+        .highlight-item span {
+            font-size: 0.95rem;
+            color: #38405b;
+        }
+
+        /* 强调色用于链接 */
+        a {
+            color: #4f62c2;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.1s, color 0.1s;
+            font-weight: 450;
+        }
+
+        a:hover {
+            color: #2b3b96;
+            border-bottom: 1px solid #4f62c2;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5e9f2;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            color: #1b2340;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-a {
+            color: #414b66;
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+        }
+
+        .inline-link-hint {
+            background: #f0f3fd;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            margin-top: 1.8rem;
+            border-left: 4px solid #4f62c2;
+        }
+
+        .inline-link-hint p {
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem;
+            font-size: 0.85rem;
+            color: #7a829e;
+            border-top: 1px solid #dce1ee;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 2.8rem 1rem 2.5rem;
+            }
+            .container {
+                padding: 1.8rem 1rem 3rem;
+            }
+            .section-card {
+                padding: 1.5rem 1.2rem;
+            }
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>pg电子 · 资料整理与索引</h1>
+    <div class="sub">围绕平台信息、内容结构与常见需求整理的简明说明页，用作索引参考与背景了解。</div>
+    <span class="badge">信息梳理 · 2025</span>
+</header>
+
+<main class="container">
+
+    <!-- 摘要卡片 -->
+    <section class="section-card">
+        <h2 class="section-title">摘要 · 关于 pg电子</h2>
+        <p>该站点聚焦于游戏化娱乐内容的分发与展示，涉及多种线上互动形式。从已有资料看，<a href="https://m--pgsoftgaming.com">pg电子</a> 在界面设计、模块组织以及内容分类上保持了较一致的风格，适用于希望快速了解结构的新用户或进行信息归档的观察者。以下内容基于可访问页面的公开信息整理，不包含未公开数据或内部机制描述。</p>
+        <p>作为索引页，本文不提供下载、注册或金融引导，仅从资料整理的角度概括其可见特性。</p>
+    </section>
+
+    <!-- 亮点 · 可观察到的特征 -->
+    <section class="section-card">
+        <h2 class="section-title">可观察到的内容特征</h2>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <strong>模块化布局</strong>
+                <span>页面分区清晰，分类入口与内容展示区彼此独立，方便按需浏览。</span>
+            </div>
+            <div class="highlight-item">
+                <strong>分类索引明确</strong>
+                <span>各栏目使用直观的标签或图标区分，减少查找时的认知负担。</span>
+            </div>
+            <div class="highlight-item">
+                <strong>视觉层级分明</strong>
+                <span>标题、摘要与具体条目之间通过字号、间距与底色作了区分。</span>
+            </div>
+            <div class="highlight-item">
+                <strong>响应式适配</strong>
+                <span>移动端与桌面端均能保持基本可读性，无明显截断或重叠。</span>
+            </div>
+        </div>
+        <p style="margin-top: 0.8rem;">以上特点均来自对公开页面的直接观察，不构成功能或性能承诺。</p>
+    </section>
+
+    <!-- 使用建议 · 基于整理视角 -->
+    <section class="section-card">
+        <h2 class="section-title">基于资料整理的几点使用建议</h2>
+        <p>如果你是对该站点进行内容梳理或信息归类，以下角度可能提供帮助：</p>
+        <ul>
+            <li>将首页与子页面分别截图并标记导航结构</li>
+            <li>记录每个主要栏目的标题、描述与链接去向</li>
+            <li>留意页面更新频率与内容替换痕迹</li>
+            <li>区分静态说明与动态加载部分</li>
+            <li>保存不同时间节点的页面快照用于对比</li>
+        </ul>
+        <p>建议始终通过官方域名 <a href="https://m--pgsoftgaming.com">pg电子</a> 获取最新页面，避免使用第三方镜像或缓存异常源。</p>
+    </section>
+
+    <!-- 场景 · 索引查阅场景 -->
+    <section class="section-card">
+        <h2 class="section-title">索引查阅的典型场景</h2>
+        <p>根据对用户访问路径的粗略归纳，以下场景较常出现：</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; margin-top: 0.5rem;">
+            <span style="background:#eaeef9; padding:0.1rem 1rem; border-radius:30px;">新内容认知</span>
+            <span style="background:#eaeef9; padding:0.1rem 1rem; border-radius:30px;">分类对比</span>
+            <span style="background:#eaeef9; padding:0.1rem 1rem; border-radius:30px;">信息归档</span>
+            <span style="background:#eaeef9; padding:0.1rem 1rem; border-radius:30px;">页面结构分析</span>
+            <span style="background:#eaeef9; padding:0.1rem 1rem; border-radius:30px;">历史版本记录</span>
+        </div>
+        <p style="margin-top: 1rem;">对于多数日常查阅需求，直接浏览 <a href="https://m--pgsoftgaming.com">pg电子</a> 即可覆盖。如需更深度的分析，建议配合浏览器开发者工具查看网络请求与DOM结构。</p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="section-card">
+        <h2 class="section-title">FAQ 摘要 · 常见疑问简答</h2>
+        <div class="faq-item">
+            <div class="faq-q">该站点的内容是否需要注册才能查看？</div>
+            <div class="faq-a">多数展示性页面可直接访问，部分交互模块可能要求登录，具体以实际页面提示为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面使用的语言是否只有中文？</div>
+            <div class="faq-a">主界面为中文，部分说明可能包含英文术语或标题，整体以中文为主要信息载体。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">资料整理时是否需要保留图片与样式？</div>
+            <div class="faq-a">若仅需文本索引，可关闭CSS与图片加载；若需视觉上下文，建议保留完整渲染截图。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">移动端与桌面端的展示差异大吗？</div>
+            <div class="faq-a">核心内容一致，但移动端导航经过折叠处理，部分卡片尺寸与间距略有调整。</div>
+        </div>
+    </section>
+
+    <!-- 可信但克制的访问说明 -->
+    <section class="section-card" style="border: 1px solid #d5dcee;">
+        <h2 class="section-title">访问说明 · 可信与克制</h2>
+        <p>本页仅对 <a href="https://m--pgsoftgaming.com">pg电子</a> 中可见的公开信息进行组织与转述。不提供任何下载链接、注册引导、金融建议或性能承诺。</p>
+        <p>我们建议使用者：</p>
+        <ul>
+            <li>通过官方域名直接访问</li>
+            <li>自行判断内容的时效性与准确性</li>
+            <li>不将本页用作投资、购买或决策依据</li>
+        </ul>
+        <p>所有描述基于对公开页面的整理，不含未公开的内部数据。</p>
+    </section>
+
+    <!-- 嵌入链接的句子（自然） -->
+    <div class="inline-link-hint">
+        <p>在该站点的导航与内容体系中，<a href="https://m--pgsoftgaming.com">pg电子</a> 作为一个主要入口，集中展示了分类与索引信息。如需进一步了解页面结构，可直接通过该链接进入主站查阅。</p>
+    </div>
+
+</main>
+
+<footer class="footer-note">
+    资料整理索引页 · 仅用于信息说明 · 内容基于公开页面 · 不构成任何引导或推荐
+</footer>
+
+</body>
+</html>
